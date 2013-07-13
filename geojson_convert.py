@@ -16,7 +16,7 @@ for feature in geojson['features']:
         wgs_xyz = geo_helper.turn_xyz_into_other_xyz(osgb_xyz[0],osgb_xyz[1],osgb_xyz[2],'osgb','wgs84')
         wgs_coord = geo_helper.turn_xyz_into_llh(wgs_xyz[0],wgs_xyz[1],wgs_xyz[2],'wgs84')
 
-        coords.append(wgs_coord)
+        coords.append([wgs_coord[1], wgs_coord[0], 0])
     
     feature['geometry']['coordinates'] = coords
 
